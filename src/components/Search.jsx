@@ -1,19 +1,14 @@
-import { useState } from 'react'
+import { Divider, Input } from 'antd'
 
-function Search({ filterFoods }) {
-  const [query, setQuery] = useState('')
+// Iteration 5
 
-  const handleQuery = (e) => {
-    setQuery(e.target.value)
-    filterFoods(e.target.value)
-  };
-
+function Search({searchName , setSearchName}) {
   return (
-    <div>
-      <h3>Search</h3>
-      <input style={{height: 20, width:200, color:'black', backgroundColor:'pink', borderRadius:6, border:1}} type="text" value={query} onChange={handleQuery} />
-    </div>
+  <>
+  <Divider>Search</Divider>
+  <label></label>
+  <Input style={{border:'black solid'}} value={searchName} type="text" onChange={event => setSearchName(event.target.value)} />
+  </>
   )
 }
-
-export default Search
+export default Search;
